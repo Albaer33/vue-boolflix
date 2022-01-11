@@ -1,13 +1,18 @@
 <template>
     <header>
-        <input type="text">
-        <button>Cerca</button>
+        <input v-model="searchWord" type="text">
+        <button @click="$emit('searchedWord', searchWord)">Cerca</button>
     </header>
 </template>
 
 <script>
 export default {
     name: 'Header',
+    data: function() {
+        return {
+            searchWord: ''
+        }
+    }
 }
 </script>
 

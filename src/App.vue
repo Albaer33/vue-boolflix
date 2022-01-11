@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header @searchedWord="searchFilm"/>
     <main>
-      <Card/>
+      <Card v-for="(film, index) in filmArray" :key="index" :details="film"/>
     </main>
   </div>
 </template>
@@ -20,21 +20,23 @@ export default {
   },
   data: function() {
     return {
-      searchedWord: 'ritorno al futuro',
+      typedKeyword: '',
       filmArray: [],
       }
     },
-  created: function() {
-    axios.get('https://api.themoviedb.org/3/search/movie',
-    {
+  methods: {
+    searchFilm: function(typedKeyword) {
+      axios.get('https://api.themoviedb.org/3/search/movie',
+      {
       params: {
         api_key: '62bbed7da31113bfdbc2205370dfec35',
-        query: this.searchedWord,
+        query: typedKeyword,
       }
-    })
-    .then((response) => {
-      this.filmArray = response.data.results;
-    });
+      })
+      .then((response) => {
+        this.filmArray = response.data.results;
+      });
+    },
   },
 }
 </script>
