@@ -15,7 +15,7 @@ export default {
     name: 'Cardlist',
     data: function() {
         return {
-            searchedWord: 'vita',
+            searchedWord: 'ritorno al futuro',
             filmArray: [],
         }
     },
@@ -28,7 +28,7 @@ export default {
             }
         })
         .then((response) => {
-            this.filmArray = response.data.response;
+            this.filmArray = response.results;
         });
     },
 }
