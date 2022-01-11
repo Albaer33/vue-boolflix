@@ -26,4 +26,9 @@ export default {
   margin: 0;
   box-sizing: border-box;
 }
+main {
+    width: 100%;
+    padding: 20px;
+    background-color: lightgray;
+}
 </style>
