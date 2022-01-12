@@ -4,11 +4,11 @@
     <main>
       <div class="film">
         <h2>Film: </h2>
-        <Card v-for="(film, index) in filmArray" :key="index" :details="film"/>
+        <Cardfilm v-for="(film, index) in filmArray" :key="index" :details="film"/>
       </div>
       <div class="series">
         <h2>TV shows: </h2>
-        <Card v-for="(series, index) in seriesArray" :key="index" :details="series"/>
+        <Cardseries v-for="(series, index) in seriesArray" :key="index" :details="series"/>
       </div>
     </main>
   </div>
@@ -16,14 +16,16 @@
 
 <script>
 import Header from './components/Header.vue';
-import Card from './components/Card.vue';
+import Cardfilm from './components/Cardfilm.vue';
+import Cardseries from './components/Cardseries.vue';
 import axios from 'axios';
 
 export default {
   name: 'App',
   components: {
     Header,
-    Card,
+    Cardfilm,
+    Cardseries
   },
   data: function() {
     return {
