@@ -1,9 +1,9 @@
 <template>
     <div class="card-wrapper">
         <h3 class="title">{{details.title}}</h3>
-        <div class="original-title">{{details.original_title}}</div>
-        <div class="lg">{{details.original_language}}</div>
-        <div class="vote">{{details.vote_average}}</div>
+        <div class="original-title">Titolo originale: {{details.original_title}}</div>
+        <div class="lg">lingua originale: {{details.original_language}}</div>
+        <div class="vote">voto medio: {{details.vote_average}}</div>
     </div>
 </template>
 

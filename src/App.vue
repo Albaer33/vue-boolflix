@@ -1,8 +1,15 @@
 <template>
   <div id="app">
-    <Header @searchedWord="searchFilm"/>
+    <Header @searchedWord="searchResult"/>
     <main>
-      <Card v-for="(film, index) in filmArray" :key="index" :details="film"/>
+      <div class="film">
+        <h2>Film: </h2>
+        <Card v-for="(film, index) in filmArray" :key="index" :details="film"/>
+      </div>
+      <div class="series">
+        <h2>TV shows: </h2>
+        <Card v-for="(series, index) in seriesArray" :key="index" :details="series"/>
+      </div>
     </main>
   </div>
 </template>
@@ -20,16 +27,22 @@ export default {
   },
   data: function() {
     return {
-      typedKeyword: '',
+      apikey: '62bbed7da31113bfdbc2205370dfec35',
       filmArray: [],
+      seriesArray: []
       }
     },
   methods: {
+    searchResult: function(typedKeyword) {
+      this.searchFilm(typedKeyword);
+      this.searchSeries(typedKeyword);
+    },
+    // restituisce un array di oggetti di film
     searchFilm: function(typedKeyword) {
       axios.get('https://api.themoviedb.org/3/search/movie',
       {
       params: {
-        api_key: '62bbed7da31113bfdbc2205370dfec35',
+        api_key: this.apikey,
         query: typedKeyword,
       }
       })
@@ -37,6 +50,21 @@ export default {
         this.filmArray = response.data.results;
       });
     },
+
+    // restituisce un array di oggetti di serie tv
+    searchSeries: function(typedKeyword) {
+      axios.get('https://api.themoviedb.org/3/search/tv',
+      {
+      params: {
+        api_key: this.apikey,
+        query: typedKeyword,
+      }
+      })
+      .then((response) => {
+        console.log(response);
+        this.seriesArray = response.data.results;
+      });
+    }
   },
 }
 </script>
