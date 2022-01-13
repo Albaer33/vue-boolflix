@@ -69,14 +69,11 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import './style/general.scss';
+
 main {
     width: 100%;
     padding: 20px;
-    background-color: lightgray;
+    background-color: #434343;
 }
 </style>
