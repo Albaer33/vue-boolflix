@@ -78,13 +78,14 @@ export default {
 
 main {
     height: calc(100vh - 80px);
-    padding: 20px;
+    padding: 0 10px;
     background-color: #434343;
     h2 {
-      margin: 20px 50px;
+      padding: 10px 50px;
       font-size: 30px;
     }
     .film, .series{
+      padding: 10px 0;
       display: flex;
       overflow-x: auto;
       overflow-y: hidden;

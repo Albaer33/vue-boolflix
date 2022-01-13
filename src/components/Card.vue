@@ -26,11 +26,16 @@
             </div>
             
             <div class="vote">
-                voto medio: 
+                <span>voto medio:</span>
                 <!-- stelle piene -->
                 <i v-for="(fullStar, i) in voteStar" :key="i" class="fas fa-star fullStar"></i>
                 <!-- stelle vuote -->
                 <i v-for="(emptyStar, j) in (5 - voteStar)" :key="j" class="far fa-star emptyStar"></i>
+            </div>
+
+            <div class="overview">
+                <span>Overview:</span>
+                <div>{{details.overview}}</div>
             </div>
         </div>
 
@@ -54,7 +59,6 @@ export default {
 <style scoped lang='scss'>
 .card-wrapper {
     position: relative;
-    margin: 0 5px;
     border: 2px solid #9c050d;
     .poster {
         position: relative;
@@ -66,24 +70,29 @@ export default {
         width: 200px;
         visibility: hidden;
     }
-    .poster:hover {
-        visibility: hidden;
-    }
     .product-info {
-        width: 90%;
-        margin: auto;
+        width: 100%;
+        padding: 10px;
+        height: 300px;
+        font-size: 12px;
         max-height: 100%;
         position: absolute;
-        top: 50%;
+        top: 10px;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%);
         .lg {
             .flag-img {
                 width: 15px;
                 height: 10px;
             }
         }
+        .overview {
+            padding: 5px 0;
+        }
     }
+}
+.card-wrapper:hover .poster {
+    visibility: hidden;
 }
 .fullStar {
     color: goldenrod;

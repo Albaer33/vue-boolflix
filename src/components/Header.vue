@@ -34,17 +34,26 @@ header {
     }
     input {
         color: inherit;
-        border-color: lightgrey;
-        width: 200px;
-        padding: 5px;
+        border-color: white;
+        outline: none;
+        width: 300px;
+        padding: 9px;
         margin: 0 20px;
         background-color: black;
     }
     button {
-        border-radius: 5px;
+        border: none;
+        border-radius: 3px;
         color: white;
-        padding: 5px 15px;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
         background-color: #9c050d;
+    }
+    button:hover {
+        background-color: #a83339;
+        cursor: pointer;
     }
 }
 </style>
