@@ -85,7 +85,7 @@ main {
       font-size: 30px;
     }
     .film, .series{
-      padding: 10px 0;
+      padding: 20px 0;
       display: flex;
       overflow-x: auto;
       overflow-y: hidden;

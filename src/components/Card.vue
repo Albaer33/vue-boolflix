@@ -58,6 +58,8 @@ export default {
 
 <style scoped lang='scss'>
 .card-wrapper {
+    margin: 0 15px;
+    height: 305px;
     position: relative;
     border: 2px solid #9c050d;
     .poster {
@@ -72,12 +74,12 @@ export default {
     }
     .product-info {
         width: 100%;
-        padding: 10px;
+        padding: 15px;
         height: 300px;
         font-size: 12px;
         max-height: 100%;
         position: absolute;
-        top: 10px;
+        top: 5px;
         left: 50%;
         transform: translate(-50%);
         .lg {
@@ -88,6 +90,8 @@ export default {
         }
         .overview {
             padding: 5px 0;
+            overflow: hidden;
+            max-height: 180px;
         }
     }
 }
