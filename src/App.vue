@@ -81,11 +81,10 @@ main {
     padding: 20px;
     background-color: #434343;
     h2 {
-      margin: 25px 50px;
+      margin: 20px 50px;
       font-size: 30px;
     }
     .film, .series{
-      height: max-content;
       display: flex;
       overflow-x: auto;
       overflow-y: hidden;

@@ -1,10 +1,15 @@
 <template>
     <div class="card-wrapper">
         <div class="poster-container">
-            <img :src="`https://image.tmdb.org/t/p/w342${details.poster_path}`" alt="">
+            <img 
+            v-if="details.poster_path" 
+            class="poster" 
+            :src="`https://image.tmdb.org/t/p/w342${details.poster_path}`" 
+            alt="">
+            <img class="noposter" v-else src="../assets/img/noimg.png" alt="">
         </div>
 
-        <div class="poster-info hidden">
+        <div class="product-info">
             <h3 v-if="details.title" class="title">{{details.title}}</h3>
             <h3 v-else class="title">{{details.name}}</h3>
 
@@ -23,9 +28,9 @@
             <div class="vote">
                 voto medio: 
                 <!-- stelle piene -->
-                <i v-for="(fullStar, i) in voteStar" :key="i" class="fas fa-star"></i>
+                <i v-for="(fullStar, i) in voteStar" :key="i" class="fas fa-star fullStar"></i>
                 <!-- stelle vuote -->
-                <i v-for="(emptyStar, j) in (5 - voteStar)" :key="j" class="far fa-star"></i>
+                <i v-for="(emptyStar, j) in (5 - voteStar)" :key="j" class="far fa-star emptyStar"></i>
             </div>
         </div>
 
@@ -50,11 +55,21 @@ export default {
 .card-wrapper {
     position: relative;
     margin: 0 5px;
-    border: 2px solid red;
-    img {
+    border: 2px solid #9c050d;
+    .poster {
+        position: relative;
+        z-index: 1;
         height: 300px;
     }
-    .poster-info {
+    .noposter {
+        height: 300px;
+        width: 200px;
+        visibility: hidden;
+    }
+    .poster:hover {
+        visibility: hidden;
+    }
+    .product-info {
         width: 90%;
         margin: auto;
         max-height: 100%;
@@ -69,8 +84,8 @@ export default {
             }
         }
     }
-    // .hidden {
-    //     visibility: hidden;
-    // }
+}
+.fullStar {
+    color: goldenrod;
 }
 </style>
