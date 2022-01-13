@@ -22,8 +22,8 @@ export default {
 <style scoped lang='scss'>
 header {
     width: 100%;
-    height: 100px;
-    line-height: 100px;
+    height: 80px;
+    line-height: 80px;
     padding: 0 50px;
     background-color: black;
     display: flex;
@@ -34,14 +34,16 @@ header {
     }
     input {
         color: inherit;
+        border-color: lightgrey;
         width: 200px;
         padding: 5px;
         margin: 0 20px;
         background-color: black;
     }
     button {
+        border-radius: 5px;
         color: white;
-        padding: 5px;
+        padding: 5px 15px;
         background-color: #9c050d;
     }
 }

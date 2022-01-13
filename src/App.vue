@@ -1,16 +1,21 @@
 <template>
   <div id="app">
+
     <Header @searchedWord="searchResult"/>
+
     <main>
+
+      <h2>Film</h2>
       <div class="film">
-        <h2>Film: </h2>
         <Card v-for="(film, index) in filmArray" :key="index" :details="film"/>
       </div>
+
+      <h2>TV shows</h2>
       <div class="series">
-        <h2>TV shows: </h2>
         <Card v-for="(series, index) in seriesArray" :key="index" :details="series"/>
       </div>
     </main>
+
   </div>
 </template>
 
@@ -72,8 +77,18 @@ export default {
 @import './style/general.scss';
 
 main {
-    width: 100%;
+    height: calc(100vh - 80px);
     padding: 20px;
     background-color: #434343;
+    h2 {
+      margin: 25px 50px;
+      font-size: 30px;
+    }
+    .film, .series{
+      height: max-content;
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
 }
 </style>
