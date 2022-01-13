@@ -1,8 +1,12 @@
 <template>
     <div class="card-wrapper">
         <img :src="`https://image.tmdb.org/t/p/w342${details.poster_path}`" alt="">
-        <h3 class="title">{{details.name}}</h3>
-        <div class="original-title">Titolo originale: {{details.original_name}}</div>
+
+        <h3 v-if="details.title" class="title">{{details.title}}</h3>
+        <h3 v-else class="title">{{details.name}}</h3>
+
+        <div v-if="details.original_title" class="original-title">Titolo originale: {{details.original_title}}</div>
+        <div v-else class="original-title">Titolo originale: {{details.original_name}}</div>
         
         <div class="lg">
             <span>lingua originale: </span>
@@ -16,16 +20,16 @@
         <div class="vote">
             voto medio: 
             <!-- stelle piene -->
-            <i v-for="(star, i) in voteStar" :key="i" class="fas fa-star"></i>
+            <i v-for="(fullStar, i) in voteStar" :key="i" class="fas fa-star"></i>
             <!-- stelle vuote -->
-            <i v-for="(star, j) in (5 - voteStar)" :key="j" class="far fa-star"></i>
+            <i v-for="(emptyStar, j) in (5 - voteStar)" :key="j" class="far fa-star"></i>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Seriescard',
+    name: 'Card',
     props: {
         details: Object
     },
