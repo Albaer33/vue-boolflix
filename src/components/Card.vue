@@ -25,13 +25,15 @@
                 <span v-else>{{details.original_language}}</span>
             </div>
             
-            <div class="vote">
+            <!-- <div class="vote">
                 <span>voto medio:</span>
-                <!-- stelle piene -->
-                <i v-for="(fullStar, i) in voteStar" :key="i" class="fas fa-star fullStar"></i>
-                <!-- stelle vuote -->
-                <i v-for="(emptyStar, j) in (5 - voteStar)" :key="j" class="far fa-star emptyStar"></i>
-            </div>
+                <span v-for="(star, index) in 5" :key="index">
+                    
+                    <i class="fas fa-star fullStar"></i>
+                    
+                    <i class="far fa-star emptyStar"></i>
+                </span>
+            </div> -->
 
             <div class="overview">
                 <span>Overview:</span>
@@ -59,9 +61,10 @@ export default {
 <style scoped lang='scss'>
 .card-wrapper {
     margin: 0 15px;
-    height: 305px;
+    height: 300px;
     position: relative;
-    border: 2px solid #9c050d;
+    box-shadow: 8px 12px 15px 5px #151515;
+    cursor: pointer;
     .poster {
         position: relative;
         z-index: 1;
@@ -82,6 +85,9 @@ export default {
         top: 5px;
         left: 50%;
         transform: translate(-50%);
+        .title {
+            font-size: 18px;
+        }
         .lg {
             .flag-img {
                 width: 15px;
@@ -91,7 +97,7 @@ export default {
         .overview {
             padding: 5px 0;
             overflow: hidden;
-            max-height: 180px;
+            max-height: 150px;
         }
     }
 }

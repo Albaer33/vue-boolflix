@@ -30,6 +30,7 @@ header {
     justify-content: space-between;
     .logo {
         font-size: 30px;
+        font-weight: bold;
         color: #E50914;
     }
     input {

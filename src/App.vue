@@ -84,8 +84,9 @@ main {
       padding: 10px 50px;
       font-size: 30px;
     }
-    .film, .series{
-      padding: 20px 0;
+    .film, .series {
+      padding-top: 10px;
+      padding-bottom: 40px;
       display: flex;
       overflow-x: auto;
       overflow-y: hidden;
