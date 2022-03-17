@@ -86,7 +86,7 @@ export default {
         left: 50%;
         transform: translate(-50%);
         .title {
-            font-size: 18px;
+            font-size: 16px;
         }
         .lg {
             .flag-img {
@@ -97,7 +97,7 @@ export default {
         .overview {
             padding: 5px 0;
             overflow: hidden;
-            max-height: 150px;
+            max-height: 140px;
         }
     }
 }
